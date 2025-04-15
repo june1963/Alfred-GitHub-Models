@@ -1,0 +1,4 @@
+openai>=1.0.0
+azure-ai>=1.0.0
+azure-ai-inference>=1.0.0
+azure-core>=1.0.0
