@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.june1963.github-models</string>
+	<key>connections</key>
+	<dict>
+		<key>241B410B-D92B-483A-8FB7-A9B206395904</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>24E85B47-358B-468D-B577-E1BCA4529395</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>24E85B47-358B-468D-B577-E1BCA4529395</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8978B496-D37D-4AA5-AD1A-359DD4D05134</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>8E093549-B5A0-4D6C-BE91-DA849F93C93D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DDCC136C-08B7-4619-A885-FBCC6F3F6F30</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>A301211E-95DF-4C1B-A0F2-D5FAC7B8F372</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DDCC136C-08B7-4619-A885-FBCC6F3F6F30</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>DDCC136C-08B7-4619-A885-FBCC6F3F6F30</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1345481D-E23D-40B6-88A8-E0725810F687</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>241B410B-D92B-483A-8FB7-A9B206395904</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>june1963</string>
+	<key>description</key>
+	<string>june1963's Alfred workflow for AI text processing with GitHub</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>GitHub Models</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Please wait...</string>
+				<key>title</key>
+				<string>Text Processing</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>1345481D-E23D-40B6-88A8-E0725810F687</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>8E093549-B5A0-4D6C-BE91-DA849F93C93D</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Finished!</string>
+				<key>title</key>
+				<string>Text Processed</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>8978B496-D37D-4AA5-AD1A-359DD4D05134</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>24E85B47-358B-468D-B577-E1BCA4529395</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>./script-filter.py</string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string></string>
+				<key>type</key>
+				<integer>8</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>DDCC136C-08B7-4619-A885-FBCC6F3F6F30</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>./run-script.py</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>241B410B-D92B-483A-8FB7-A9B206395904</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>ait</string>
+				<key>subtext</key>
+				<string>AI Text Process your selection</string>
+				<key>text</key>
+				<string>AI Text Processing</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>A301211E-95DF-4C1B-A0F2-D5FAC7B8F372</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string># AI Text Processing Alfred Workflow
+
+An Alfred workflow that provides powerful AI-powered text processing capabilities using Azure AI services.
+
+Created by [@june1963](https://github.com/june1963) | [GitHub](https://github.com/june1963/Alfred-GitHub-Models)
+
+## Features
+
+- Process text with various AI-powered actions
+- Multiple processing modes:
+  - Follow Instructions
+  - Answer Questions
+  - Condense Text
+  - Paraphrase
+  - Summarize
+  - Explain
+  - Expand
+  - Improve
+  - Correct Spelling
+- Summary Formats:
+  - Bullet Points
+  - TL;DR
+  - Executive Summary
+- Tone Modifications:
+  - Professional
+  - Casual
+  - Friendly
+  - Diplomatic
+  - Confident
+  - Simple
+
+## Requirements
+
+- Alfred 5 with Powerpack
+- Python 3.9+
+  - Install `openai`, `azure-ai`, `azure-ai-inference`, and `azure-core` packages:
+    ```bash
+    pip install openai azure-ai azure-ai-inference azure-core
+    ```
+    or use the `requirements.txt`:
+    ```bash
+    pip install -r requirements.txt
+    ```
+- Azure AI API key or GitHub PAT with `models:read` permissions
+
+## Installation
+
+1. Download the latest release
+2. Double click to install in Alfred
+
+## Configuration
+
+Set up your preferred hotkey for the workflow, e.g., `⌘+Shift+1`. You can also configure the workflow to use a specific model by setting the `MODEL_NAME` configuration variable.
+
+The workflow supports the following configuration variables:
+
+- `API_KEY`: Your GitHub PAT with `models:read` permissions
+- `ENDPOINT`: Your Azure AI endpoint URL
+- `MODEL_NAME`: Azure AI model name (default: "o3-mini")
+- `MAX_TOKENS`: Maximum tokens for responses
+- `MAX_COMPLETION_TOKENS`: Maximum tokens for o1-mini and o3 mini models
+- `TEMPERATURE`: Control response randomness (0.01-1.0)
+- `SYSTEM_PROMPT`: Optional custom system prompt
+- `OUTPUT_AS_MARKDOWN`: Output responses in Markdown format (true/false)
+- `DEBUG`: Enable debug logging (true/false)
+
+## Usage
+
+1. Select the text you want to process
+2. Activate Alfred and type your hotkey (e.g., `⌘+Shift+1`)
+3. Choose the desired action from the list
+4. Wait for the AI to process the text, which may take a few seconds
+5. The processed text will be displayed in the active window
+
+## License
+
+MIT License - see [LICENSE](https://github.com/june1963/Alfred-GitHub-Models/blob/main/LICENSE) for details
+
+## Author
+
+Copyright (c) 2025 [june1963](https://github.com/june1963)</string>
+	<key>uidata</key>
+	<dict>
+		<key>1345481D-E23D-40B6-88A8-E0725810F687</key>
+		<dict>
+			<key>xpos</key>
+			<real>410</real>
+			<key>ypos</key>
+			<real>330</real>
+		</dict>
+		<key>241B410B-D92B-483A-8FB7-A9B206395904</key>
+		<dict>
+			<key>xpos</key>
+			<real>405</real>
+			<key>ypos</key>
+			<real>445</real>
+		</dict>
+		<key>24E85B47-358B-468D-B577-E1BCA4529395</key>
+		<dict>
+			<key>xpos</key>
+			<real>580</real>
+			<key>ypos</key>
+			<real>445</real>
+		</dict>
+		<key>8978B496-D37D-4AA5-AD1A-359DD4D05134</key>
+		<dict>
+			<key>xpos</key>
+			<real>765</real>
+			<key>ypos</key>
+			<real>445</real>
+		</dict>
+		<key>8E093549-B5A0-4D6C-BE91-DA849F93C93D</key>
+		<dict>
+			<key>xpos</key>
+			<real>50</real>
+			<key>ypos</key>
+			<real>385</real>
+		</dict>
+		<key>A301211E-95DF-4C1B-A0F2-D5FAC7B8F372</key>
+		<dict>
+			<key>xpos</key>
+			<real>50</real>
+			<key>ypos</key>
+			<real>505</real>
+		</dict>
+		<key>DDCC136C-08B7-4619-A885-FBCC6F3F6F30</key>
+		<dict>
+			<key>xpos</key>
+			<real>215</real>
+			<key>ypos</key>
+			<real>445</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Your GitHub PAT here.</string>
+			<key>label</key>
+			<string>API Key</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>API_KEY</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>https://models.inference.ai.azure.com</string>
+				<key>placeholder</key>
+				<string>https://models.inference.ai.azure.com</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Your AI Inferencing API endpoint here</string>
+			<key>label</key>
+			<string>API Endpoint</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>ENDPOINT</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>o3-mini</string>
+				<key>pairs</key>
+				<array>
+					<array>
+						<string>DeepSeek-R1</string>
+						<string>DeepSeek-R1</string>
+					</array>
+					<array>
+						<string>DeepSeek-V3-0324</string>
+						<string>DeepSeek-V3-0324</string>
+					</array>
+					<array>
+						<string>gpt-4o</string>
+						<string>gpt-4o</string>
+					</array>
+					<array>
+						<string>gpt-4o-mini</string>
+						<string>gpt-4o-mini</string>
+					</array>
+					<array>
+						<string>Llama-3.2-1B-Instruct (fastest)</string>
+						<string>Llama-3.2-1B-Instruct</string>
+					</array>
+					<array>
+						<string>Mistral-Nemo</string>
+						<string>Mistral-Nemo</string>
+					</array>
+					<array>
+						<string>Ministral-3B</string>
+						<string>Ministral-3B</string>
+					</array>
+					<array>
+						<string>o1-mini (fast &amp; quality)</string>
+						<string>o1-mini</string>
+					</array>
+					<array>
+						<string>o3-mini (faster &amp; more quality)</string>
+						<string>o3-mini</string>
+					</array>
+				</array>
+			</dict>
+			<key>description</key>
+			<string>Choose your AI model</string>
+			<key>label</key>
+			<string>AI Model</string>
+			<key>type</key>
+			<string>popupbutton</string>
+			<key>variable</key>
+			<string>MODEL_NAME</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>defaultvalue</key>
+				<integer>500</integer>
+				<key>markercount</key>
+				<integer>20</integer>
+				<key>maxvalue</key>
+				<integer>8000</integer>
+				<key>minvalue</key>
+				<integer>0</integer>
+				<key>onlystoponmarkers</key>
+				<false/>
+				<key>showmarkers</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>The maximum number of tokens to generate, applies to non-o1 models only.</string>
+			<key>label</key>
+			<string>Max Tokens</string>
+			<key>type</key>
+			<string>slider</string>
+			<key>variable</key>
+			<string>MAX_TOKENS</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>defaultvalue</key>
+				<integer>32000</integer>
+				<key>markercount</key>
+				<integer>25</integer>
+				<key>maxvalue</key>
+				<integer>128000</integer>
+				<key>minvalue</key>
+				<integer>0</integer>
+				<key>onlystoponmarkers</key>
+				<false/>
+				<key>showmarkers</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>The maximum number of tokens to generate (incl. reasoning tokens), applies to o1 models only.</string>
+			<key>label</key>
+			<string>Max Completion Tokens</string>
+			<key>type</key>
+			<string>slider</string>
+			<key>variable</key>
+			<string>MAX_COMPLETION_TOKENS</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>0.3</string>
+				<key>pairs</key>
+				<array>
+					<array>
+						<string>0.01</string>
+						<string>0.01</string>
+					</array>
+					<array>
+						<string>0.1</string>
+						<string>0.1</string>
+					</array>
+					<array>
+						<string>0.2</string>
+						<string>0.2</string>
+					</array>
+					<array>
+						<string>0.3</string>
+						<string>0.3</string>
+					</array>
+					<array>
+						<string>0.4</string>
+						<string>0.4</string>
+					</array>
+					<array>
+						<string>0.5</string>
+						<string>0.5</string>
+					</array>
+					<array>
+						<string>0.6</string>
+						<string>0.6</string>
+					</array>
+					<array>
+						<string>0.7</string>
+						<string>0.7</string>
+					</array>
+					<array>
+						<string>0.8</string>
+						<string>0.8</string>
+					</array>
+					<array>
+						<string>0.9</string>
+						<string>0.9</string>
+					</array>
+					<array>
+						<string>1.0</string>
+						<string>1.0</string>
+					</array>
+				</array>
+			</dict>
+			<key>description</key>
+			<string>The randomness of the generated text.  Lower for higher precision but less creativity, higher for less precision but more creativity.</string>
+			<key>label</key>
+			<string>Temperature</string>
+			<key>type</key>
+			<string>popupbutton</string>
+			<key>variable</key>
+			<string>TEMPERATURE</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+				<key>verticalsize</key>
+				<integer>9</integer>
+			</dict>
+			<key>description</key>
+			<string>Extra context for how the model should respond.</string>
+			<key>label</key>
+			<string>System Prompt</string>
+			<key>type</key>
+			<string>textarea</string>
+			<key>variable</key>
+			<string>SYSTEM_PROMPT</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<true/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Output as Markdown</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>OUTPUT_AS_MARKDOWN</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<false/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Add additional debug logs in Alfred</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>DEBUG</string>
+		</dict>
+	</array>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string>1.0.0</string>
+	<key>webaddress</key>
+	<string>https://github.com/june1963/Alfred-GitHub-Models</string>
+</dict>
+</plist>

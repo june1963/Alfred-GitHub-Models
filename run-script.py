@@ -18,15 +18,15 @@ from azure.core.credentials import AzureKeyCredential
 from openai import OpenAI
 
 # Configuration
-DEBUG = os.getenv("DEBUG", "false").lower() == "true" # Enable debug mode if DEBUG is set to "true"
 ENDPOINT = os.getenv("ENDPOINT", "https://models.inference.ai.azure.com") # Default endpoint
-MODEL_NAME = os.getenv("MODEL_NAME", "o3-mini") # Default model name
 API_KEY = os.getenv("API_KEY") # API key for authentication, can be GitHub Personal Access Token or Azure API key
-TEMPERATURE = float(os.getenv("TEMPERATURE", "0.3")) # Default temperature for randomness in responses
+MODEL_NAME = os.getenv("MODEL_NAME", "o3-mini") # Default model name
 MAX_TOKENS = int(os.getenv("MAX_TOKENS", "500")) # Default max tokens for responses
 MAX_COMPLETION_TOKENS = int(os.getenv("MAX_COMPLETION_TOKENS", "32000")) # Default max tokens for OpenAI reasoning models
-OUTPUT_AS_MARKDOWN = os.getenv("OUTPUT_AS_MARKDOWN", "false").lower() == "true" # Output as markdown if set to "true"
+TEMPERATURE = float(os.getenv("TEMPERATURE", "0.3")) # Default temperature for randomness in responses
 SYSTEM_PROMPT = os.getenv("SYSTEM_PROMPT") # System prompt for the model, can be set via configuration
+OUTPUT_AS_MARKDOWN = os.getenv("OUTPUT_AS_MARKDOWN") # Output as markdown if set to "true"
+DEBUG = os.getenv("DEBUG") # Enable debug mode if DEBUG is set to "true"
 
 def debug_log(message, category="INFO"):
     """Helper function for debug output visible in Alfred
@@ -43,7 +43,7 @@ class AzureAIClient:
     def __init__(self):
         try:
             if MODEL_NAME == "o1-mini" or MODEL_NAME == "o3-mini":
-                # Initialize Azure OpenAI client for o1-mini model
+                # Initialize Azure OpenAI client for o1-mini or o3-mini models
                 self.client = OpenAI(
                     base_url=ENDPOINT,
                     api_key=API_KEY
@@ -66,8 +66,8 @@ class AzureAIClient:
             debug_log(f"Sending {len(messages)} messages to Azure AI", "API")
             
             if MODEL_NAME == "o1-mini" or MODEL_NAME == "o3-mini":
-                # Use MAX_COMPLETION_TOKENS for o1-mini models
-                debug_log(f"Using token limit for o1-mini: {MAX_COMPLETION_TOKENS}", "CONFIG")
+                # Use MAX_COMPLETION_TOKENS for o1-mini or o3-mini models
+                debug_log(f"Using token limit for {MODEL_NAME}: {MAX_COMPLETION_TOKENS}", "CONFIG")
 
                 response = self.client.chat.completions.create(
                     model=MODEL_NAME,
@@ -170,7 +170,6 @@ def build_messages(action, text, variables=None):
         - ALWAYS maintain the existing tone of voice and style, e.g. formal, casual, polite, conversational, etc.
         - NEVER surround the improved text with quotes or any additional formatting
         - If the text is already well-written and requires no improvement, don't change the given text
-        - If the text already contains markdown formatting, preserve it. For example: `code` or *italic*
         - NEVER comment on the text, never announce your solution, never explain anything.
         - NEVER add any additional information or context to the text
         """,
@@ -203,6 +202,7 @@ def build_messages(action, text, variables=None):
         You will be presented with a text and your task is to extract all facts from this text and summarize it in all relevant aspects in up to ten bullet points and a concluding one-liner summary.
         You will unconditionally and strictly follow these rules:
         - You will reply to the message only with the bullet point list and the one-liner summary.
+        - Always answer in the same language as the original text
         """,
         "tldr": """
         Create 2-3 sentence summary of the text.
@@ -211,6 +211,7 @@ def build_messages(action, text, variables=None):
         You will not comment on the text, never announce your solution, never explain anything.
         You will never change the meaning of the text.
         You will always return a summary of the text.
+        Always answer in the same language as the original text
         """,
         "exec_summary": """
         Generate high-level executive summary of the text.
@@ -219,6 +220,7 @@ def build_messages(action, text, variables=None):
         You will not comment on the text, never announce your solution, never explain anything.
         You will never change the meaning of the text.
         You will always return a summary of the text.
+        Always answer in the same language as the original text
         """,
         "rewrite_tone": f"""Rewrite in {variables.get('tone', '')} tone
         Act as a content writer and editor that changes the tone of text. 
@@ -227,7 +229,7 @@ def build_messages(action, text, variables=None):
         Do not change the meaning. Maintain URLs. Maintain roughly the same length. 
         Correct spelling, grammar and punctuation errors. 
         Output only the rewritten text and nothing else, do not chat, no preamble, no formatting (no 'single quotes' nor "double quotes"), no quotation marks, get to the point. 
-        Answer in the same language as the original text: if the original text is in German, answer in German; if the original text is in French, answer in French; etc. 
+        Always answer in the same language as the original text
         """
     }
 
@@ -356,8 +358,21 @@ def parse_arguments():
     
     raise ValueError("Insufficient arguments provided")
 
+def log_env_vars():
+    """Log all relevant environment variable settings at the start of debug."""
+    if DEBUG:
+        env_vars = dict(os.environ)
+        for k, v in env_vars.items():
+            v_str = str(v)
+            if k == 'API_KEY' and v_str:
+                v_str = v_str[:4] + '...' + v_str[-4:] if len(v_str) > 8 else '****'
+            elif v_str and len(v_str) > 32:
+                v_str = v_str[:16] + '...' + v_str[-8:]
+            debug_log(f"ENV {k} = {v_str}", "CONFIG")
+
 def main():
     try:
+        log_env_vars()
         action, text, variables = parse_arguments()
         debug_log(f"Action: {action}, Text: {text[:50]}..., Variables: {variables}")
         
