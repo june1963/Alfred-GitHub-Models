@@ -1,6 +1,6 @@
 # AI Text Processing Alfred Workflow
 
-An Alfred workflow that provides powerful AI-powered text processing capabilities using Azure AI services.
+An Alfred workflow that provides powerful AI-powered text processing capabilities using Azure AI services via GitHub Models.
 
 ## Features
 
@@ -48,19 +48,19 @@ An Alfred workflow that provides powerful AI-powered text processing capabilitie
 
 ## Configuration
 
-Set up your preferred hotkey for the workflow, e.g., `⌘+Shift+1`. You can also configure the workflow to use a specific Azure AI model by setting the `MODEL_NAME` environment variable.
+Set up your preferred hotkey for the workflow, e.g., `⌘+Shift+1`. You can also configure the workflow to use a specific model by setting the `MODEL_NAME` configuration variable.
 
-The workflow supports the following environment variables:
+The workflow supports the following configuration variables:
 
-   - `API_KEY`: Your Azure AI API key or GitHub PAT with `models:read` permissions
-   - `ENDPOINT`: Your Azure AI endpoint URL
-   - `MODEL_NAME`: Azure AI model name (default: "o3-mini")
-   - `REQUIREMENTS`: Optional, use `requirements.txt` for package installation
-   - `DEBUG`: Enable debug logging (true/false)
-   - `TEMPERATURE`: Control response randomness (0.0-1.0)
-   - `MAX_TOKENS`: Maximum tokens for responses
-   - `OUTPUT_AS_MARKDOWN`: Output responses in markdown format (true/false)
-   - `SYSTEM_PROMPT`: Optional custom system prompt
+- `API_KEY`: Your GitHub PAT with `models:read` permissions
+- `ENDPOINT`: Your Azure AI endpoint (default: `https://models.inference.ai.azure.com`)
+- `MODEL_NAME`: Azure AI model name (default: `o3-mini`)
+- `MAX_TOKENS`: Maximum tokens for responses
+- `MAX_COMPLETION_TOKENS`: Maximum tokens for o1-mini and o3 mini models
+- `TEMPERATURE`: Control response randomness (0.01-1.0)
+- `SYSTEM_PROMPT`: Optional custom system prompt
+- `OUTPUT_AS_MARKDOWN`: Output responses in Markdown format (true/false)
+- `DEBUG`: Enable debug logging (true/false)
 
 ## Usage
 
@@ -76,4 +76,4 @@ MIT License - see [LICENSE](LICENSE) for details
 
 ## Author
 
-Copyright (c) 2025 june1963
+Copyright (c) 2025 [june1963](https://github.com/june1963)
