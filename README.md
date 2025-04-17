@@ -2,6 +2,8 @@
 
 An Alfred workflow that provides powerful AI-powered text processing capabilities using Azure AI services via GitHub Models.
 
+This project was heavily inspired by [`zeitlings/alfred-ollama`](https://github.com/zeitlings/alfred-ollama)! ❤️
+
 ## Features
 
 - Process text with various AI-powered actions
