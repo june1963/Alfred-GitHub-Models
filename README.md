@@ -39,7 +39,7 @@ An Alfred workflow that provides powerful AI-powered text processing capabilitie
     ```bash
     pip install -r requirements.txt
     ```
-- Azure AI API key or GitHub PAT with `models:read` permissions
+- GitHub PAT with `models:read` permissions
 
 ## Installation
 
