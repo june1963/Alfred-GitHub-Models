@@ -13,14 +13,23 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
+      - name: Update version in info.plist
+        run: |
+          # Extract version from tag (remove 'v' prefix)
+          VERSION=${GITHUB_REF#refs/tags/v}
+          # Update version in info.plist using sed with more specific XML path
+          sed -i "/<key>version<\/key>/{n;s/<string>.*<\/string>/<string>$VERSION<\/string>/}" assets/info.plist
+      
       - name: Create Alfred Workflow
         run: |
           # Create a temporary directory for packaging
           mkdir -p workflow
+          # Move into the assets directory
+          cd assets
           # Copy required files
-          cp icon.png info.plist run-script.py script-filter.py workflow/
+          cp icon.png info.plist run-script.py script-filter.py ../workflow/
           # Create zip file with .alfredworkflow extension
-          cd workflow
+          cd ../workflow
           zip -r ../GitHub-Models.alfredworkflow *
           cd ..
           

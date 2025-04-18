@@ -34,11 +34,14 @@ This project was heavily inspired by [`zeitlings/alfred-ollama`](https://github.
 - Alfred 5 with Powerpack
 - Python 3.9+
   - Install `openai`, `azure-ai-inference`, and `azure-core` packages:
-    ```bash
+
+    ```shell
     pip install openai azure-ai-inference azure-core
     ```
-    or use the `requirements.txt`:
-    ```bash
+
+  - or use the `requirements.txt`:
+
+    ```shell
     pip install -r requirements.txt
     ```
 - GitHub PAT with `models:read` permissions
@@ -47,6 +50,39 @@ This project was heavily inspired by [`zeitlings/alfred-ollama`](https://github.
 
 1. Download the latest release
 2. Double click to install in Alfred
+3. Right click the installed `GitHub Models` workflow in the Alfred sidebar UI and click `Open in Terminal`:
+<details style="margin-left: 2em;">
+
+<summary>📌 Click to show screenshot image</summary>
+
+![Screenshot demonstrating how to open directory for installed Alfred workflow in Alfred](./media/open-in-terminal-screenshot.png)
+
+</details>
+
+4. Grant executable permissions to the scripts `script-filter.py` and `run-script.py`:
+<details style="margin-left: 2em;">
+
+<summary>📌 Click to show code blocks</summary>
+
+```shell
+chmod +x "./"{run-script.py,script-filter.py}
+```
+
+This should update the files accordingly:
+
+```shell
+# Without executable permissions
+$ ls -lah | grep ".py"
+-rw-rw-rw-  1 codespace root  19K Apr 18 21:45 run-script.py
+-rw-rw-rw-  1 codespace root 4.0K Apr 18 21:45 script-filter.py
+
+# With executable permissions
+$ ls -lah | grep ".py"
+-rwxrwxrwx  1 codespace root  19K Apr 18 21:45 run-script.py
+-rwxrwxrwx  1 codespace root 4.0K Apr 18 21:45 script-filter.py
+```
+
+</details>
 
 ## Configuration
 
