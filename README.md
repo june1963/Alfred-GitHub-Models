@@ -33,9 +33,9 @@ This project was heavily inspired by [`zeitlings/alfred-ollama`](https://github.
 
 - Alfred 5 with Powerpack
 - Python 3.9+
-  - Install `openai`, `azure-ai`, `azure-ai-inference`, and `azure-core` packages:
+  - Install `openai`, `azure-ai-inference`, and `azure-core` packages:
     ```bash
-    pip install openai azure-ai azure-ai-inference azure-core
+    pip install openai azure-ai-inference azure-core
     ```
     or use the `requirements.txt`:
     ```bash
