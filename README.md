@@ -84,13 +84,13 @@ This should update the files accordingly:
   - Install `azure-core`, `azure-ai-inference`, and `openai` packages directly:
 
     ```shell
-    mkdir -p packages && pip install --target ./packages azure-core azure-ai-inference openai 
+    pip install azure-core azure-ai-inference openai 
     ```
 
   - OR install via the `requirements.txt` from the workflow directory:
 
     ```shell
-    mkdir -p packages && python3 -m pip install --target ./packages -r requirements.txt
+    pip install -r requirements.txt
     ```
 
 ## Configuration
