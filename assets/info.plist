@@ -128,6 +128,8 @@
 				<integer>0</integer>
 				<key>hotmod</key>
 				<integer>0</integer>
+				<key>hotstring</key>
+				<string></string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -677,11 +679,30 @@ Copyright (c) 2025 [june1963](https://github.com/june1963)</string>
 			<key>variable</key>
 			<string>DEBUG</string>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>${workflow_dir}/workflow-venv/bin/python3</string>
+				<key>placeholder</key>
+				<string>${workflow_dir}/workflow-venv/bin/python3</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Default value is`workflow-venv/bin/python3` in the Alfred workflow directory.</string>
+			<key>label</key>
+			<string>Python Path</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>WORKFLOW_PYTHON</string>
+		</dict>
 	</array>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
-	<string>1.0.0</string>
+	<string>1.0.2</string>
 	<key>webaddress</key>
 	<string>https://github.com/june1963/Alfred-GitHub-Models</string>
 </dict>

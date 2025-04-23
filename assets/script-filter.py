@@ -1,4 +1,15 @@
-#!/usr/bin/env python3
+#!/usr/bin/env bash
+""":"
+# Check for WORKFLOW_PYTHON environment variable and use it if available
+workflow_dir=$(dirname "$0")
+if [ -n "$WORKFLOW_PYTHON" ]; then
+    # Expand any variables in WORKFLOW_PYTHON
+    eval "python_path=$WORKFLOW_PYTHON"
+    exec "$python_path" "$0" "$@"
+else
+    exec python3 "$0" "$@"
+fi
+":"""
 """
 AI Text Processing Alfred Workflow
 MIT License
