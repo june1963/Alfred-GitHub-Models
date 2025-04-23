@@ -33,16 +33,17 @@ This project was heavily inspired by [`zeitlings/alfred-ollama`](https://github.
 
 - Alfred 5 with Powerpack
 - Python 3.9+
-  - Install `openai`, `azure-ai-inference`, and `azure-core` packages:
+  - Install `azure-core`, `azure-ai-inference`, and `openai` packages:
 
     ```shell
-    pip install openai azure-ai-inference azure-core
+    mkdir -p packages && pip install --target ./packages azure-core azure-ai-inference openai 
     ```
 
   - or use the `requirements.txt`:
 
     ```shell
-    pip install -r requirements.txt
+    # From the workflow directory
+    mkdir -p packages && python3 -m pip install --target ./packages -r requirements.txt
     ```
 - GitHub PAT with `models:read` permissions
 

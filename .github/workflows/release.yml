@@ -22,22 +22,15 @@ jobs:
       
       - name: Create Alfred Workflow
         run: |
-          # Create a temporary directory for packaging
-          mkdir -p workflow
-          # Move into the assets directory
-          cd assets
-          # Copy required files
-          cp icon.png info.plist run-script.py script-filter.py ../workflow/
-          # Create zip file with .alfredworkflow extension
-          cd ../workflow
-          zip -r ../GitHub-Models.alfredworkflow *
-          cd ..
+          # Create workflow package directly from assets with version in filename
+          VERSION=${GITHUB_REF#refs/tags/v}
+          cd assets && zip -r ../GitHub-Models-v${VERSION}.alfredworkflow *
           
       - name: Create Release
         id: create_release
         uses: softprops/action-gh-release@v1
         with:
-          files: GitHub-Models.alfredworkflow
+          files: GitHub-Models-v*.alfredworkflow
           generate_release_notes: true
           draft: false
           prerelease: false
