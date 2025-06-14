@@ -31,6 +31,26 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>0A26EA71-2784-44CA-A4D7-19AC34979953</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>E8215A00-CEDD-4796-9EF9-F890CE52F2FA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>8E093549-B5A0-4D6C-BE91-DA849F93C93D</key>
 		<array>
@@ -125,11 +145,11 @@
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
-				<integer>0</integer>
+				<integer>18</integer>
 				<key>hotmod</key>
-				<integer>0</integer>
+				<integer>1179648</integer>
 				<key>hotstring</key>
-				<string></string>
+				<string>1</string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -169,7 +189,7 @@
 			<key>config</key>
 			<dict>
 				<key>autopaste</key>
-				<true/>
+				<false/>
 				<key>clipboardtext</key>
 				<string>{query}</string>
 				<key>ignoredynamicplaceholders</key>
@@ -260,7 +280,7 @@
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>keyword</key>
-				<string>ait</string>
+				<string>ai</string>
 				<key>subtext</key>
 				<string>AI Text Process your selection</string>
 				<key>text</key>
@@ -272,6 +292,54 @@
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>A301211E-95DF-4C1B-A0F2-D5FAC7B8F372</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>behaviour</key>
+				<integer>1</integer>
+				<key>fontmode</key>
+				<integer>0</integer>
+				<key>fontsizing</key>
+				<integer>0</integer>
+				<key>footertext</key>
+				<string>Press ESC to exit the Text View</string>
+				<key>inputfile</key>
+				<string></string>
+				<key>inputtype</key>
+				<integer>0</integer>
+				<key>loadingtext</key>
+				<string></string>
+				<key>outputmode</key>
+				<integer>0</integer>
+				<key>scriptinput</key>
+				<integer>0</integer>
+				<key>spellchecking</key>
+				<integer>0</integer>
+				<key>stackview</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.userinterface.text</string>
+			<key>uid</key>
+			<string>0A26EA71-2784-44CA-A4D7-19AC34979953</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>soundname</key>
+				<string>Blow</string>
+				<key>systemsound</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.playsound</string>
+			<key>uid</key>
+			<string>E8215A00-CEDD-4796-9EF9-F890CE52F2FA</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -360,6 +428,13 @@ MIT License - see [LICENSE](https://github.com/june1963/Alfred-GitHub-Models/blo
 Copyright (c) 2025 [june1963](https://github.com/june1963)</string>
 	<key>uidata</key>
 	<dict>
+		<key>0A26EA71-2784-44CA-A4D7-19AC34979953</key>
+		<dict>
+			<key>xpos</key>
+			<real>765</real>
+			<key>ypos</key>
+			<real>560</real>
+		</dict>
 		<key>1345481D-E23D-40B6-88A8-E0725810F687</key>
 		<dict>
 			<key>xpos</key>
@@ -408,6 +483,13 @@ Copyright (c) 2025 [june1963](https://github.com/june1963)</string>
 			<real>215</real>
 			<key>ypos</key>
 			<real>445</real>
+		</dict>
+		<key>E8215A00-CEDD-4796-9EF9-F890CE52F2FA</key>
+		<dict>
+			<key>xpos</key>
+			<real>770</real>
+			<key>ypos</key>
+			<real>670</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
@@ -702,7 +784,7 @@ Copyright (c) 2025 [june1963](https://github.com/june1963)</string>
 		</dict>
 	</array>
 	<key>version</key>
-	<string>1.0.2</string>
+	<string>1.0.3</string>
 	<key>webaddress</key>
 	<string>https://github.com/june1963/Alfred-GitHub-Models</string>
 </dict>
