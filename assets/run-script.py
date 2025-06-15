@@ -66,7 +66,8 @@ class AzureAIClient:
                 self.client = ChatCompletionsClient(
                     endpoint=ENDPOINT,
                     credential=AzureKeyCredential(API_KEY),
-                    model=MODEL_NAME
+                    model=MODEL_NAME,
+                    timeout=TIMEOUT
                 )
             debug_log(f"Azure AI client initialized successfully with timeout: {TIMEOUT}s", "CONFIG")
         except Exception as e:
