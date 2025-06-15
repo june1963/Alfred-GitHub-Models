@@ -105,6 +105,7 @@ The workflow supports the following configuration variables:
 - `MAX_TOKENS`: Maximum tokens for responses
 - `MAX_COMPLETION_TOKENS`: Maximum tokens for o1-mini and o3 mini models
 - `TEMPERATURE`: Control response randomness (0.01-1.0)
+- `TIMEOUT`: Request timeout in seconds (default: 60)
 - `SYSTEM_PROMPT`: Optional custom system prompt
 - `OUTPUT_AS_MARKDOWN`: Output responses in Markdown format (true/false)
 - `DEBUG`: Enable debug logging (true/false)
