@@ -37,7 +37,7 @@ This project was heavily inspired by [`zeitlings/alfred-ollama`](https://github.
 
 ## Installation
 
-1. Download the [latest release](https://github.com/june1963/Alfred-GitHub-Models/releases/latest)
+1. Download the [latest release](https://github.com/june1963/Alfred-GitHub-Models/releases/latest), i.e., `GitHub-Models-vX.Y.Z.alfredworkflow`
 2. Double click the downloaded `GitHub-Models-vX.Y.Z.alfredworkflow` file to install in Alfred
 3. Right click the installed `GitHub Models` workflow in the Alfred sidebar UI and click `Open in Terminal`:
 <details style="margin-left: 2em;">
