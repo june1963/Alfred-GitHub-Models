@@ -33,7 +33,7 @@ This project was heavily inspired by [`zeitlings/alfred-ollama`](https://github.
 
 - Alfred 5 with Powerpack
 - Python 3.9+
-- GitHub PAT with `models:read` permissions
+- GitHub fine-grained PAT with `models:read` permissions (ensure `Public repositories` is selected)
 
 ## Installation
 
