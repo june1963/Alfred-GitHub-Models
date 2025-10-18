@@ -35,6 +35,7 @@ MODEL_NAME = os.getenv("MODEL_NAME", "o3-mini") # Default model name
 MAX_TOKENS = int(os.getenv("MAX_TOKENS", "500")) # Default max tokens for responses
 MAX_COMPLETION_TOKENS = int(os.getenv("MAX_COMPLETION_TOKENS", "32000")) # Default max tokens for OpenAI reasoning models
 TEMPERATURE = float(os.getenv("TEMPERATURE", "0.3")) # Default temperature for randomness in responses
+TIMEOUT = int(os.getenv("TIMEOUT", "60")) # Default timeout in seconds for API requests
 SYSTEM_PROMPT = os.getenv("SYSTEM_PROMPT") # System prompt for the model, can be set via configuration
 OUTPUT_AS_MARKDOWN = os.getenv("OUTPUT_AS_MARKDOWN") # Output as markdown if set to "true"
 DEBUG = os.getenv("DEBUG") # Enable debug mode if DEBUG is set to "true"
@@ -57,16 +58,18 @@ class AzureAIClient:
                 # Initialize Azure OpenAI client for o1-mini or o3-mini models
                 self.client = OpenAI(
                     base_url=ENDPOINT,
-                    api_key=API_KEY
+                    api_key=API_KEY,
+                    timeout=TIMEOUT
                 )
             else:
                 # Initialize Azure AI client for other models
                 self.client = ChatCompletionsClient(
                     endpoint=ENDPOINT,
                     credential=AzureKeyCredential(API_KEY),
-                    model=MODEL_NAME
+                    model=MODEL_NAME,
+                    timeout=TIMEOUT
                 )
-            debug_log("Azure AI client initialized successfully", "CONFIG")
+            debug_log(f"Azure AI client initialized successfully with timeout: {TIMEOUT}s", "CONFIG")
         except Exception as e:
             debug_log(f"Client initialization failed: {str(e)}", "ERROR")
             raise
@@ -74,7 +77,7 @@ class AzureAIClient:
     def call_completion(self, messages, max_tokens=MAX_TOKENS, temperature=TEMPERATURE):
         """Call the chat completion endpoint using openai or azure.ai.inference"""
         try:
-            debug_log(f"Sending {len(messages)} messages to Azure AI", "API")
+            debug_log(f"Sending {len(messages)} messages to Azure AI with timeout: {TIMEOUT}s", "API")
             
             if MODEL_NAME == "o1-mini" or MODEL_NAME == "o3-mini":
                 # Use MAX_COMPLETION_TOKENS for o1-mini or o3-mini models
@@ -107,8 +110,13 @@ class AzureAIClient:
                 debug_log(f"Response content: {response.choices[0].message.content[:100]}...", "API")
             return response.choices[0].message.content
         except Exception as e:
-            debug_log(f"API call failed: {str(e)}", "ERROR")
-            raise
+            error_str = str(e).lower()
+            if "timeout" in error_str or "timed out" in error_str:
+                debug_log(f"Request timed out after {TIMEOUT} seconds", "ERROR")
+                return f"Error: Request timed out after {TIMEOUT} seconds. You can adjust the timeout by setting the TIMEOUT environment variable."
+            else:
+                debug_log(f"API call failed: {str(e)}", "ERROR")
+                raise
 
 def build_messages(action, text, variables=None):
     """Construct the message payload using proper message classes"""
